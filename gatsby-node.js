@@ -3,6 +3,12 @@ const path = require(`path`);
 const createPaginatedPages = require("gatsby-paginate");
 const algoliasearch = require('algoliasearch');
 
+/**
+Uncomment the code block below if you are planning to use Algolia as your external data.
+In this case, to ensure that the build works, some static data is generated and that is used as a source instead.
+**/
+
+/*
 const ALGOLIA_API_KEY = '<YOUR_ALGOLIA_API_KEY>';
 const ALGOLIA_INDEX = '<YOUR_ALGOLIA_INDEX_NAME>';
 const ALGOLIA_APP_ID = '<YOUR_ALGOLIA_APP_ID';
@@ -47,7 +53,12 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
     );
   });
 };
+*/
 
+/**
+Delete if the exports.sourceNodes from above is used.
+Here, product data is generated randomly and that is used as the source. We are mocking an external source data with static data.
+**/
 exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
   const products = []
